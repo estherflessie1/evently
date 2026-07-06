@@ -1,13 +1,11 @@
-import Navbar from "../components/Navbar/Navbar.jsx";
+import Navbar from "../components/Navbar/Navbar";
+import Hero from "../components/Hero/Hero";
 
 function Home() {
   return (
     <>
       <Navbar />
-
-      <div>
-        <h1>Home Page</h1>
-      </div>
+      <Hero />
     </>
   );
 }
