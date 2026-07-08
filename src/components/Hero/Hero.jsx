@@ -1,5 +1,4 @@
 import "./Hero.css";
-import { FiSearch } from "react-icons/fi";
 import SearchBar from "../SearchBar/SearchBar";
 
 function Hero() {
@@ -13,12 +12,8 @@ function Hero() {
         </h1>
 
         <p>Find concerts, conferences, festivals and more.</p>
-        <SearchBar />
 
-        <div className="search-box">
-          <FiSearch className="search-icon" />
-          <input type="text" placeholder="Search events, cities..." />
-        </div>
+        <SearchBar />
       </div>
 
       {/* Decorative circles */}
