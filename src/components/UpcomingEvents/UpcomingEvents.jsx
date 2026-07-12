@@ -6,6 +6,10 @@ import music from "../../assets/images/music.jpg";
 import tech from "../../assets/images/tech.jpg";
 import sports from "../../assets/images/sports.jpg";
 
+console.log(music);
+console.log(tech);
+console.log(sports);
+
 function UpcomingEvents() {
   return (
     <section className="upcoming-events">

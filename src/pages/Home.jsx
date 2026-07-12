@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
+import UpcomingEvents from "../components/UpcomingEvents/UpcomingEvents";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   return (
@@ -8,6 +10,8 @@ function Home() {
       <Navbar />
       <Hero />
       <CategoryFilter />
+      <UpcomingEvents />
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,10 @@
 .upcoming-events {
-  padding: 80px;
+  padding: 80px 5%;
 }
 
 .events-container {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
 }
