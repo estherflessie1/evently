@@ -1,28 +1,30 @@
 import Navbar from "../components/Navbar/Navbar";
-import SectionTitle from "../components/SectionTitle/SectionTitle";
-import SearchBar from "../components/SearchBar/SearchBar";
+import ExploreHeader from "../components/ExploreHeader/ExploreHeader";
+import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
 import Footer from "../components/Footer/Footer";
+import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
+
+import "./Explore.css";
 
 function Explore() {
   return (
     <>
       <Navbar />
 
-      <main>
-        <SectionTitle
-          title="Explore Events"
-          subtitle="Discover exciting events happening around the world."
-        />
+      <ExploreHeader />
 
-        <SearchBar />
+      <CategoryFilter />
 
-        {/* FilterBar */}
+      <main className="explore-content">
+        <aside className="sidebar">
+          <FilterSidebar />
+        </aside>
 
-        {/* Category Chips */}
+        <section className="events-section">
+          {/* Event Grid */}
 
-        {/* Event Grid */}
-
-        {/* Load More */}
+          {/* Pagination */}
+        </section>
       </main>
 
       <Footer />

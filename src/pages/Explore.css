@@ -1,0 +1,16 @@
+.explore-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+
+  width: 90%;
+  margin: 40px auto 80px;
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.events-section {
+  width: 100%;
+}
