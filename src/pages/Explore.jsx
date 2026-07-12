@@ -3,6 +3,7 @@ import ExploreHeader from "../components/ExploreHeader/ExploreHeader";
 import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
 import Footer from "../components/Footer/Footer";
 import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
+import EventGrid from "../components/EventGrid/EventGrid";
 
 import "./Explore.css";
 
@@ -21,7 +22,9 @@ function Explore() {
         </aside>
 
         <section className="events-section">
-          {/* Event Grid */}
+          <section className="events-section">
+            <EventGrid />
+          </section>
 
           {/* Pagination */}
         </section>
