@@ -1,1 +1,15 @@
+<<<<<<< HEAD
 @import "tailwindcss";
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+>>>>>>> d99048eba6f6d7bdfce5bcf271b77f41a8e5f5a5
