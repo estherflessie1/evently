@@ -1,0 +1,24 @@
+.search-results-page {
+  width: 90%;
+  margin: 60px auto;
+}
+
+.search-results-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-results-header h1 {
+  font-size: 3rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.search-results-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+.search-bar-wrapper {
+  margin: 40px 0 60px;
+}
