@@ -1,5 +1,6 @@
 import "./EventGrid.css";
 import EventCard from "../EventCard/EventCard";
+import Pagination from "../Pagination/Pagination";
 
 // Import your images
 import music from "../../assets/images/music.jpg";
@@ -83,6 +84,8 @@ function EventGrid() {
           />
         ))}
       </div>
+
+      <Pagination />
     </section>
   );
 }

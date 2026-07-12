@@ -25,8 +25,6 @@ function Explore() {
           <section className="events-section">
             <EventGrid />
           </section>
-
-          {/* Pagination */}
         </section>
       </main>
 
