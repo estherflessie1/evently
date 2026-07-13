@@ -5,6 +5,7 @@ import EventBanner from "../components/EventBanner/EventBanner";
 import EventInfo from "../components/EventInfo/EventInfo";
 import RegistrationCard from "../components/RegistrationCard/RegistrationCard";
 import OrganizerCard from "../components/OrganizerCard/OrganizerCard";
+import RelatedEvents from "../components/RelatedEvents/RelatedEvents";
 
 import "./EventDetails.css";
 
