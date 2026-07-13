@@ -20,7 +20,7 @@ function SearchResults() {
         </div>
 
         <div className="search-bar-wrapper">
-          <SearchBar />
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
 
         <EventGrid />
