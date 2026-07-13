@@ -94,3 +94,9 @@
 .details-btn:hover {
   color: #1d4ed8;
 }
+
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

@@ -1,0 +1,48 @@
+.registration-card {
+  background: white;
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  position: sticky;
+  top: 100px;
+}
+
+.registration-card h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.register-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.register-details p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #475569;
+}
+
+.registration-card button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
