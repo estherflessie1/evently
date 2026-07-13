@@ -8,8 +8,9 @@ import {
 } from "react-icons/fi";
 import { PiPaletteFill } from "react-icons/pi";
 
-function CategoryFilter() {
+function CategoryFilter({ selectedCategory, setSelectedCategory }) {
   const categories = [
+    { name: "All", icon: "🌍", color: "#2563EB" },
     { name: "Music", icon: <FiMusic />, color: "#ef5da8" },
     { name: "Tech", icon: <FiMonitor />, color: "#2563EB" },
     { name: "Business", icon: <FiBriefcase />, color: "#F97316" },
@@ -21,7 +22,15 @@ function CategoryFilter() {
   return (
     <section className="categories">
       {categories.map((category) => (
-        <button className="category-btn" key={category.name}>
+        <button
+          key={category.name}
+          className={
+            selectedCategory === category.name
+              ? "category-btn active"
+              : "category-btn"
+          }
+          onClick={() => setSelectedCategory(category.name)}
+        >
           <span className="category-icon" style={{ color: category.color }}>
             {category.icon}
           </span>

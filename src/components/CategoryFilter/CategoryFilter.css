@@ -40,3 +40,13 @@
   align-items: center;
   font-size: 1.4rem;
 }
+
+.category-btn.active {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.category-btn.active .category-icon {
+  color: #fff !important;
+}
