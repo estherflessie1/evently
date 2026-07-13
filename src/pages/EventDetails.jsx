@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import EventBanner from "../components/EventBanner/EventBanner";
 import EventInfo from "../components/EventInfo/EventInfo";
 import RegistrationCard from "../components/RegistrationCard/RegistrationCard";
+import OrganizerCard from "../components/OrganizerCard/OrganizerCard";
 
 import "./EventDetails.css";
 
@@ -18,6 +19,7 @@ function EventDetails() {
         <div className="details-layout">
           <div className="left-column">
             <EventInfo />
+            <OrganizerCard />
           </div>
 
           <div className="right-column">
