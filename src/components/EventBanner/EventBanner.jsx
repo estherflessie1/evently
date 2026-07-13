@@ -1,16 +1,10 @@
 import "./EventBanner.css";
-import bannerImage from "../../assets/images/music.jpg";
 
-function EventBanner() {
+function EventBanner({ event }) {
   return (
     <section className="event-banner">
-      <img
-        src={bannerImage}
-        alt="Summer Beats Festival"
-        className="banner-image"
-      />
+      <img src={event.image} alt={event.title} className="banner-image" />
     </section>
   );
 }
-
 export default EventBanner;

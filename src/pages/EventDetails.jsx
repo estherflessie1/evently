@@ -6,10 +6,14 @@ import EventInfo from "../components/EventInfo/EventInfo";
 import RegistrationCard from "../components/RegistrationCard/RegistrationCard";
 import OrganizerCard from "../components/OrganizerCard/OrganizerCard";
 import RelatedEvents from "../components/RelatedEvents/RelatedEvents";
+import { useParams } from "react-router-dom";
+import events from "../data/events";
 
 import "./EventDetails.css";
 
 function EventDetails() {
+  const { id } = useParams();
+  const event = events.find((item) => item.id === Number(id));
   return (
     <>
       <Navbar />
