@@ -1,26 +1,44 @@
+import { useState } from "react";
+
 import Navbar from "../components/Navbar/Navbar";
 import ExploreHeader from "../components/ExploreHeader/ExploreHeader";
 import SearchBar from "../components/SearchBar/SearchBar";
 import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
-import Footer from "../components/Footer/Footer";
 import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import EventGrid from "../components/EventGrid/EventGrid";
+import EmptyState from "../components/EmptyState/EmptyState";
+import Footer from "../components/Footer/Footer";
 
-import { useState } from "react";
 import events from "../data/events";
 
 import "./Explore.css";
 
 function Explore() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCity, setSelectedCity] = useState("Any City");
 
   const filteredEvents = events.filter((event) => {
-    return (
+    const matchesSearch =
       event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      event.category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+      event.category.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesCategory =
+      selectedCategory === "All" || event.category === selectedCategory;
+
+    const matchesCity =
+      selectedCity === "Any City" ||
+      event.location.toLowerCase().includes(selectedCity.toLowerCase());
+
+    return matchesSearch && matchesCategory && matchesCity;
   });
+
+  const clearFilters = () => {
+    setSearchTerm("");
+    setSelectedCategory("All");
+    setSelectedCity("Any City");
+  };
 
   return (
     <>
@@ -30,15 +48,25 @@ function Explore() {
 
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      <CategoryFilter />
+      <CategoryFilter
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
 
       <main className="explore-content">
         <aside className="sidebar">
-          <FilterSidebar />
+          <FilterSidebar
+            selectedCity={selectedCity}
+            setSelectedCity={setSelectedCity}
+          />
         </aside>
 
         <section className="events-section">
-          <EventGrid events={filteredEvents} />
+          {filteredEvents.length > 0 ? (
+            <EventGrid events={filteredEvents} />
+          ) : (
+            <EmptyState onClearFilters={clearFilters} />
+          )}
         </section>
       </main>
 

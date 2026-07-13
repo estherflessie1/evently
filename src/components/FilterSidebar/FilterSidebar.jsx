@@ -1,13 +1,16 @@
 import "./FilterSidebar.css";
 import { FiCalendar, FiMapPin, FiRotateCcw } from "react-icons/fi";
 
-function FilterSidebar() {
+function FilterSidebar({ selectedCity, setSelectedCity }) {
   return (
     <aside className="filter-sidebar">
       <div className="filter-header">
         <h3>Filters</h3>
 
-        <button className="reset-btn">
+        <button
+          className="reset-btn"
+          onClick={() => setSelectedCity("Any City")}
+        >
           <FiRotateCcw />
           Reset
         </button>
@@ -20,6 +23,7 @@ function FilterSidebar() {
 
         <div className="select-box">
           <FiCalendar />
+
           <select>
             <option>Any Date</option>
             <option>Today</option>
@@ -36,7 +40,11 @@ function FilterSidebar() {
 
         <div className="select-box">
           <FiMapPin />
-          <select>
+
+          <select
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+          >
             <option>Any City</option>
             <option>Lagos</option>
             <option>Abuja</option>
