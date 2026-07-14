@@ -1,9 +1,12 @@
 .explore-content {
   display: grid;
+
   grid-template-columns: 280px 1fr;
+
   gap: 30px;
 
   width: 90%;
+
   margin: 40px auto 80px;
 }
 
@@ -13,4 +16,40 @@
 
 .events-section {
   width: 100%;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .explore-content {
+    grid-template-columns: 240px 1fr;
+
+    gap: 20px;
+
+    width: 92%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .explore-content {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 92%;
+
+    margin: 25px auto 50px;
+
+    gap: 25px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .events-section {
+    width: 100%;
+  }
 }

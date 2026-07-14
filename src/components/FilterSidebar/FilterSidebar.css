@@ -1,14 +1,20 @@
 .filter-sidebar {
   background: #fff;
+
   padding: 24px;
+
   border-radius: 16px;
+
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 .filter-header {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   margin-bottom: 30px;
 }
 
@@ -18,11 +24,17 @@
 
 .reset-btn {
   border: none;
+
   background: transparent;
+
   color: #2563eb;
+
   display: flex;
+
   align-items: center;
+
   gap: 6px;
+
   cursor: pointer;
 }
 
@@ -32,36 +44,51 @@
 
 .filter-group label {
   display: block;
+
   font-weight: 600;
+
   margin-bottom: 10px;
 }
 
 .select-box {
   display: flex;
+
   align-items: center;
+
   border: 1px solid #e2e8f0;
+
   border-radius: 10px;
+
   padding: 12px;
 }
 
 .select-box select {
   border: none;
+
   outline: none;
+
   width: 100%;
+
   margin-left: 10px;
+
   background: transparent;
 }
 
 .checkbox-group {
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 }
 
 .checkbox-group label {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   font-weight: 400;
 }
 
@@ -71,8 +98,38 @@ input[type="range"] {
 
 .price-labels {
   display: flex;
+
   justify-content: space-between;
+
   margin-top: 10px;
+
   color: #64748b;
+
   font-size: 0.9rem;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .filter-sidebar {
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .filter-header {
+    margin-bottom: 20px;
+  }
+
+  .filter-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .filter-group {
+    margin-bottom: 20px;
+  }
+
+  .select-box {
+    padding: 10px;
+  }
 }

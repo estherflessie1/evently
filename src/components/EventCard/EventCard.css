@@ -1,7 +1,11 @@
 .event-card {
-  width: 340px;
+  width: 100%;
+  max-width: 340px;
+
   background: #fff;
+
   border-radius: 18px;
+
   overflow: hidden;
 
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -20,16 +24,20 @@
 .event-image {
   width: 100%;
   height: 210px;
+
   object-fit: cover;
+
   display: block;
 }
 
 .event-badge {
   position: absolute;
+
   top: 16px;
   left: 16px;
 
   background: white;
+
   color: #2563eb;
 
   padding: 8px 14px;
@@ -37,6 +45,7 @@
   border-radius: 50px;
 
   font-size: 13px;
+
   font-weight: 600;
 }
 
@@ -46,7 +55,9 @@
 
 .event-content h3 {
   font-size: 1.55rem;
+
   font-weight: 700;
+
   color: #0f172a;
 
   margin-bottom: 20px;
@@ -54,7 +65,9 @@
 
 .event-meta {
   display: flex;
+
   flex-direction: column;
+
   gap: 14px;
 
   margin-bottom: 24px;
@@ -62,10 +75,13 @@
 
 .event-meta p {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   color: #64748b;
+
   font-size: 15px;
 }
 
@@ -75,15 +91,19 @@
 
 .details-btn {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   border: none;
+
   background: transparent;
 
   color: #2563eb;
 
   font-size: 1rem;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -97,12 +117,60 @@
 
 .event-card-link {
   text-decoration: none;
+
   color: inherit;
+
   display: block;
 }
 
-.event-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .event-card {
+    max-width: 320px;
+  }
+
+  .event-content h3 {
+    font-size: 1.35rem;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .event-card {
+    max-width: 100%;
+
+    border-radius: 14px;
+  }
+
+  .event-image {
+    height: 190px;
+  }
+
+  .event-content {
+    padding: 18px;
+  }
+
+  .event-content h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 15px;
+  }
+
+  .event-meta {
+    gap: 10px;
+  }
+
+  .event-meta p {
+    font-size: 14px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 400px) {
+  .event-image {
+    height: 170px;
+  }
 }
