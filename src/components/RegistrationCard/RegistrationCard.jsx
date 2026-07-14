@@ -1,16 +1,15 @@
 import "./RegistrationCard.css";
-
 import { FiCalendar, FiClock, FiMapPin, FiUsers } from "react-icons/fi";
 
-function RegistrationCard() {
+function RegistrationCard({ event }) {
   return (
     <aside className="registration-card">
-      <h2>₦10,000</h2>
+      <h2>{event.price}</h2>
 
       <div className="register-details">
         <p>
           <FiCalendar />
-          August 12, 2026
+          {event.date}
         </p>
 
         <p>
@@ -20,12 +19,12 @@ function RegistrationCard() {
 
         <p>
           <FiMapPin />
-          Lagos, Nigeria
+          {event.location}
         </p>
 
         <p>
           <FiUsers />
-          250 Seats Left
+          {event.seats}
         </p>
       </div>
 

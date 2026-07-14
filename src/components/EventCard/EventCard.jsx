@@ -5,7 +5,7 @@ import { FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
 function EventCard({ id, image, category, title, date, location }) {
   return (
     <Link to={`/event/${id}`} className="event-card-link">
-      <div className="event-card">
+      <article className="event-card">
         <div className="event-image-container">
           <img src={image} alt={title} className="event-image" />
 
@@ -18,21 +18,21 @@ function EventCard({ id, image, category, title, date, location }) {
           <div className="event-meta">
             <p>
               <FiCalendar className="icon" />
-              {date}
+              <span>{date}</span>
             </p>
 
             <p>
               <FiMapPin className="icon" />
-              {location}
+              <span>{location}</span>
             </p>
           </div>
 
-          <button className="details-btn">
-            View Details
+          <div className="details-btn">
+            <span>View Details</span>
             <FiArrowRight />
-          </button>
+          </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 }

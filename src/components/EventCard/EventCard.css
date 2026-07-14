@@ -100,3 +100,9 @@
   color: inherit;
   display: block;
 }
+
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

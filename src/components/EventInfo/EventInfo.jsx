@@ -1,39 +1,36 @@
 import "./EventInfo.css";
 import { FiCalendar, FiMapPin, FiDollarSign, FiUsers } from "react-icons/fi";
 
-function EventInfo() {
+function EventInfo({ event }) {
   return (
     <section className="event-info">
-      <span className="event-category">Music</span>
+      <span className="event-category">{event.category}</span>
 
-      <h1>Summer Beats Festival</h1>
+      <h1>{event.title}</h1>
 
       <div className="event-details-list">
         <p>
           <FiCalendar />
-          August 12, 2026
+          {event.date}
         </p>
 
         <p>
           <FiMapPin />
-          Lagos, Nigeria
+          {event.location}
         </p>
 
         <p>
           <FiDollarSign />
-          ₦10,000
+          {event.price}
         </p>
 
         <p>
           <FiUsers />
-          250 Seats Available
+          {event.seats}
         </p>
       </div>
 
-      <p className="event-description">
-        Experience an unforgettable evening filled with live music, amazing
-        performances, delicious food, and networking opportunities.
-      </p>
+      <p className="event-description">{event.description}</p>
     </section>
   );
 }
