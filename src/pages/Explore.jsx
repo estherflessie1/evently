@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
 import ExploreHeader from "../components/ExploreHeader/ExploreHeader";
@@ -14,9 +15,18 @@ import events from "../data/events";
 import "./Explore.css";
 
 function Explore() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams] = useSearchParams();
+
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams.get("search") || "",
+  );
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCity, setSelectedCity] = useState("Any City");
+
+  useEffect(() => {
+    setSearchTerm(searchParams.get("search") || "");
+  }, [searchParams]);
 
   const filteredEvents = events.filter((event) => {
     const matchesSearch =

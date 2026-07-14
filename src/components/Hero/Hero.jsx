@@ -1,7 +1,10 @@
 import "./Hero.css";
+import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 
 function Hero() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -13,10 +16,13 @@ function Hero() {
 
         <p>Find concerts, conferences, festivals and more.</p>
 
-        <SearchBar />
+        <SearchBar
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          redirect={true}
+        />
       </div>
 
-      {/* Decorative circles */}
       <div className="circle left"></div>
       <div className="circle right"></div>
     </section>

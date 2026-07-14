@@ -1,23 +1,24 @@
 import "./SearchBar.css";
 import { FiSearch } from "react-icons/fi";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
+function SearchBar({ searchTerm = "", setSearchTerm, redirect = false }) {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      navigate("/explore");
-      return;
+    if (redirect) {
+      navigate(`/explore?search=${encodeURIComponent(searchTerm)}`);
     }
+  };
 
-    navigate(`/explore?search=${encodeURIComponent(searchTerm)}`);
+  const handleChange = (e) => {
+    if (setSearchTerm) {
+      setSearchTerm(e.target.value);
+    }
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && redirect) {
       handleSearch();
     }
   };
@@ -30,11 +31,11 @@ function SearchBar() {
         type="text"
         placeholder="Search events..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
 
-      <button onClick={handleSearch}>Search</button>
+      {redirect && <button onClick={handleSearch}>Search</button>}
     </div>
   );
 }
