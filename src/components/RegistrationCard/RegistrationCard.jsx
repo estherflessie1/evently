@@ -27,7 +27,7 @@ function RegistrationCard({ event }) {
           {event.seats}
         </p>
       </div>
-      <Link to="/register" className="register-btn">
+      <Link to={`/register/${event.id}`} className="register-btn">
         Register Now
       </Link>
     </aside>
