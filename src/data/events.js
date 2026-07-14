@@ -1,9 +1,16 @@
 import music from "../assets/images/music.jpg";
 import tech from "../assets/images/tech.jpg";
-import sports from "../assets/images/sports.jpg";
+import marathon from "../assets/images/marathon.jpg";
 import business from "../assets/images/business.jpg";
 import art from "../assets/images/art.jpg";
 import festival from "../assets/images/festival.jpg";
+
+import jazzNight from "../assets/images/jazz-night.jpg";
+import aiConference from "../assets/images/ai-conference.jpg";
+import football from "../assets/images/football.jpg";
+import womenBusiness from "../assets/images/women-business.jpg";
+import photographyExhibition from "../assets/images/photography-exhibition.jpg";
+import fashionFestival from "../assets/images/fashion-festival.jpg";
 
 const events = [
   {
@@ -34,7 +41,7 @@ const events = [
 
   {
     id: 3,
-    image: sports,
+    image: marathon,
     category: "Sports",
     title: "Lagos City Marathon",
     date: "30 August 2026",
@@ -86,7 +93,7 @@ const events = [
 
   {
     id: 7,
-    image: music,
+    image: jazzNight,
     category: "Music",
     title: "Jazz Night Live",
     date: "20 September 2026",
@@ -99,7 +106,7 @@ const events = [
 
   {
     id: 8,
-    image: tech,
+    image: aiConference,
     category: "Tech",
     title: "AI & Innovation Conference",
     date: "22 September 2026",
@@ -112,7 +119,7 @@ const events = [
 
   {
     id: 9,
-    image: sports,
+    image: football,
     category: "Sports",
     title: "National Football Finals",
     date: "25 September 2026",
@@ -125,7 +132,7 @@ const events = [
 
   {
     id: 10,
-    image: business,
+    image: womenBusiness,
     category: "Business",
     title: "Women in Business Forum",
     date: "28 September 2026",
@@ -138,7 +145,7 @@ const events = [
 
   {
     id: 11,
-    image: art,
+    image: photographyExhibition,
     category: "Art",
     title: "Photography Exhibition",
     date: "2 October 2026",
@@ -151,7 +158,7 @@ const events = [
 
   {
     id: 12,
-    image: festival,
+    image: fashionFestival,
     category: "Festival",
     title: "Lagos Fashion Festival",
     date: "8 October 2026",
