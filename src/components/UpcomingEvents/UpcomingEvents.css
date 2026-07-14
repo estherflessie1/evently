@@ -5,11 +5,15 @@
 .events-container {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 24px;
+}
 
-  justify-items: center;
+/* Make every card fill its grid column */
+.events-container .event-card {
+  width: 100%;
+  max-width: none;
 }
 
 /* Tablet */
@@ -20,7 +24,7 @@
   }
 
   .events-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 20px;
   }

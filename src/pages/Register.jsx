@@ -16,6 +16,18 @@ function Register() {
   const [registered, setRegistered] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      setRegistered(true);
+    }, 1000);
+  };
+
+  // Event not found
   if (!event) {
     return (
       <>
@@ -23,7 +35,13 @@ function Register() {
 
         <main className="register-page">
           <div className="register-container">
-            <h2>Event not found.</h2>
+            <h1>Event Not Found</h1>
+
+            <p>Sorry, this event does not exist or has been removed.</p>
+
+            <Link to="/explore" className="register-btn">
+              Explore Events
+            </Link>
           </div>
         </main>
 
@@ -32,67 +50,44 @@ function Register() {
     );
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-
-    setTimeout(() => {
-      const registration = {
-        registrationId: "EVT-" + Math.floor(100000 + Math.random() * 900000),
-        eventId: event.id,
-        eventTitle: event.title,
-        eventDate: event.date,
-        eventLocation: event.location,
-        registeredAt: new Date().toLocaleString(),
-      };
-
-      localStorage.setItem("eventRegistration", JSON.stringify(registration));
-
-      setLoading(false);
-      setRegistered(true);
-    }, 1500);
-  };
-
+  // Successful registration screen
   if (registered) {
-    const registration = JSON.parse(localStorage.getItem("eventRegistration"));
-
     return (
       <>
         <Navbar />
 
         <main className="register-page">
-          <div className="register-container">
-            <h1>🎉 Registration Successful!</h1>
+          <div className="register-container success-container">
+            <div className="success-icon">✓</div>
 
-            <p>
-              You have successfully registered for{" "}
-              <strong>{registration.eventTitle}</strong>.
+            <h1>Registration Successful!</h1>
+
+            <p className="success-message">
+              Your registration has been confirmed. A confirmation email has
+              been sent with your event details.
             </p>
 
-            <p>
-              <strong>Registration ID:</strong>
-              <br />
-              {registration.registrationId}
-            </p>
+            <div className="success-summary">
+              <div>
+                <span>Event</span>
+                <strong>{event.title}</strong>
+              </div>
 
-            <p>
-              <strong>Date:</strong>
-              <br />
-              {registration.eventDate}
-            </p>
+              <div>
+                <span>Date</span>
+                <strong>{event.date}</strong>
+              </div>
 
-            <p>
-              <strong>Location:</strong>
-              <br />
-              {registration.eventLocation}
-            </p>
+              <div>
+                <span>Location</span>
+                <strong>{event.location}</strong>
+              </div>
 
-            <p>
-              <strong>Registered On:</strong>
-              <br />
-              {registration.registeredAt}
-            </p>
+              <div>
+                <span>Ticket</span>
+                <strong>{event.price}</strong>
+              </div>
+            </div>
 
             <Link to="/explore" className="register-btn">
               Explore More Events
@@ -105,6 +100,7 @@ function Register() {
     );
   }
 
+  // Registration form
   return (
     <>
       <Navbar />
@@ -113,17 +109,21 @@ function Register() {
         <div className="register-container">
           <h1>Register for {event.title}</h1>
 
-          <p>
-            <strong>Date:</strong> {event.date}
-          </p>
+          <p>Complete the form below to reserve your spot.</p>
 
-          <p>
-            <strong>Location:</strong> {event.location}
-          </p>
+          <div className="event-preview">
+            <p>
+              <strong>Date:</strong> {event.date}
+            </p>
 
-          <p>
-            <strong>Price:</strong> {event.price}
-          </p>
+            <p>
+              <strong>Location:</strong> {event.location}
+            </p>
+
+            <p>
+              <strong>Price:</strong> {event.price}
+            </p>
+          </div>
 
           <form className="register-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Full Name" required />
@@ -132,10 +132,16 @@ function Register() {
 
             <input type="tel" placeholder="Phone Number" required />
 
-            <input type="number" min="1" defaultValue="1" />
+            <input
+              type="number"
+              placeholder="Number of Tickets"
+              min="1"
+              defaultValue="1"
+              required
+            />
 
-            <button type="submit" disabled={loading}>
-              {loading ? "Registering..." : "Complete Registration"}
+            <button type="submit">
+              {loading ? "Processing..." : "Complete Registration"}
             </button>
           </form>
         </div>

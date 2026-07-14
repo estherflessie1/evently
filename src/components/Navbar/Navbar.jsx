@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+
 import logo from "../../assets/logo.png";
 
 function Navbar() {
@@ -35,13 +36,18 @@ function Navbar() {
         </li>
 
         <li>
-          <button className="mobile-sign-btn">Sign In</button>
+          <button
+            className="sign-in-btn mobile-btn"
+            onClick={() => setMenuOpen(false)}
+          >
+            Sign In
+          </button>
         </li>
       </ul>
 
-      <button className="sign-in-btn">Sign In</button>
+      <button className="sign-in-btn desktop-btn">Sign In</button>
 
-      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FiX /> : <FiMenu />}
       </button>
     </nav>
