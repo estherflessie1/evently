@@ -1,0 +1,30 @@
+.organizer-card {
+  margin: 60px 0;
+}
+
+.organizer-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.organizer-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.organizer-card button {
+  margin-top: 20px;
+  padding: 14px 24px;
+
+  background: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+}

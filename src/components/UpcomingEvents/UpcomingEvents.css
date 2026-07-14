@@ -1,0 +1,45 @@
+.upcoming-events {
+  padding: 80px 5%;
+}
+
+.events-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* Make every card fill its grid column */
+.events-container .event-card {
+  width: 100%;
+  max-width: none;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .upcoming-events {
+    padding: 60px 40px;
+  }
+
+  .events-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .upcoming-events {
+    padding: 50px 20px;
+  }
+
+  .events-container {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+}

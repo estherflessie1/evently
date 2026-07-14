@@ -1,0 +1,55 @@
+.event-details {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 60px auto;
+}
+
+.details-layout {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 1024px) {
+  .event-details {
+    width: 92%;
+    margin: 50px auto;
+  }
+
+  .details-layout {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+  .event-details {
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .details-layout {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+}

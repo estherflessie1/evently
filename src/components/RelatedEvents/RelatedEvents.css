@@ -1,0 +1,9 @@
+.related-events {
+  margin-top: 80px;
+}
+
+.related-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}

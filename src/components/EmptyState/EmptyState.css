@@ -1,0 +1,33 @@
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.empty-state h2 {
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.empty-state p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.empty-state button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.empty-state button:hover {
+  background: #1d4ed8;
+}
