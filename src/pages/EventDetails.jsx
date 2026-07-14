@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom";
+
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
@@ -7,7 +9,6 @@ import RegistrationCard from "../components/RegistrationCard/RegistrationCard";
 import OrganizerCard from "../components/OrganizerCard/OrganizerCard";
 import RelatedEvents from "../components/RelatedEvents/RelatedEvents";
 
-import { useParams } from "react-router-dom";
 import events from "../data/events";
 
 import "./EventDetails.css";
@@ -17,13 +18,12 @@ function EventDetails() {
 
   const event = events.find((item) => item.id === Number(id));
 
-  // Show a message if the event ID doesn't exist
   if (!event) {
     return (
       <>
         <Navbar />
         <main className="event-details">
-          <h2>Event not found</h2>
+          <h2>Event not found.</h2>
         </main>
         <Footer />
       </>
@@ -35,7 +35,6 @@ function EventDetails() {
       <Navbar />
 
       <main className="event-details">
-        {/* Pass the selected event */}
         <EventBanner event={event} />
 
         <div className="details-layout">
@@ -49,7 +48,7 @@ function EventDetails() {
           </div>
         </div>
 
-        <RelatedEvents />
+        <RelatedEvents currentEventId={event.id} />
       </main>
 
       <Footer />

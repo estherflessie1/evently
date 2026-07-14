@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
 import ExploreHeader from "../components/ExploreHeader/ExploreHeader";
-import SearchBar from "../components/SearchBar/SearchBar";
 import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
 import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import EventGrid from "../components/EventGrid/EventGrid";
@@ -80,9 +79,12 @@ function Explore() {
     <>
       <Navbar />
 
-      <ExploreHeader />
-
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <ExploreHeader
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        selectedCity={selectedCity}
+        setSelectedCity={setSelectedCity}
+      />
 
       <CategoryFilter
         selectedCategory={selectedCategory}
