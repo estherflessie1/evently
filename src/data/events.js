@@ -100,8 +100,7 @@ const events = [
     location: "Abuja",
     price: "₦8,000",
     seats: "180 Seats Left",
-    description:
-      "Spend an evening enjoying smooth jazz performances from talented musicians.",
+    description: "Spend an evening enjoying smooth jazz performances.",
   },
 
   {
@@ -113,8 +112,7 @@ const events = [
     location: "Lagos",
     price: "₦15,000",
     seats: "350 Seats Left",
-    description:
-      "Explore the future of Artificial Intelligence, startups and emerging technologies.",
+    description: "Explore AI, startups and emerging technologies.",
   },
 
   {
@@ -126,8 +124,7 @@ const events = [
     location: "Kano",
     price: "₦6,000",
     seats: "600 Seats Left",
-    description:
-      "Watch Nigeria's top football clubs compete for the championship trophy.",
+    description: "Watch Nigeria's top football clubs compete.",
   },
 
   {
@@ -139,8 +136,7 @@ const events = [
     location: "Abuja",
     price: "Free",
     seats: "300 Seats Left",
-    description:
-      "Connect with successful women entrepreneurs, investors and business leaders.",
+    description: "Connect with women entrepreneurs and investors.",
   },
 
   {
@@ -152,8 +148,7 @@ const events = [
     location: "Lagos",
     price: "₦2,500",
     seats: "120 Seats Left",
-    description:
-      "Explore breathtaking photography collections from award-winning artists.",
+    description: "Explore photography collections from artists.",
   },
 
   {
@@ -165,8 +160,7 @@ const events = [
     location: "Lagos",
     price: "₦12,000",
     seats: "500 Seats Left",
-    description:
-      "Celebrate fashion, culture and creativity with designers from across Africa.",
+    description: "Celebrate fashion, culture and creativity.",
   },
 ];
 

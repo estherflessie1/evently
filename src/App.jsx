@@ -3,7 +3,6 @@ import Home from "./pages/home";
 import EventDetails from "./pages/eventdetails";
 import Explore from "./pages/Explore";
 import SearchResults from "./pages/SearchResults";
-import { Link } from "react-router-dom";
 import Register from "./pages/Register";
 import About from "./pages/About";
 
