@@ -9,7 +9,7 @@ function Home() {
     <>
       <Navbar />
       <Hero />
-      <CategoryFilter />
+      <CategoryFilter redirect={true} />
       <UpcomingEvents />
       <Footer />
     </>

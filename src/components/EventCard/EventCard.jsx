@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
 
 function EventCard({ id, image, category, title, date, location }) {
+  console.log("EventCard props:", {
+    id,
+    title,
+  });
   return (
     <Link to={`/event/${id}`} className="event-card-link">
       <article className="event-card">

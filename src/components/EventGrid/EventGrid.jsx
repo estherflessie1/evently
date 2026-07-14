@@ -3,6 +3,7 @@ import EventCard from "../EventCard/EventCard";
 import Pagination from "../Pagination/Pagination";
 
 function EventGrid({ events }) {
+  console.log("First event in EventGrid:", events[0]);
   return (
     <section className="event-grid-section">
       <div className="grid-header">

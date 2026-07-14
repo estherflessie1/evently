@@ -2,13 +2,7 @@ import "./UpcomingEvents.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import EventCard from "../EventCard/EventCard";
 
-import music from "../../assets/images/music.jpg";
-import tech from "../../assets/images/tech.jpg";
-import sports from "../../assets/images/sports.jpg";
-
-console.log(music);
-console.log(tech);
-console.log(sports);
+import events from "../../data/events";
 
 function UpcomingEvents() {
   return (
@@ -19,29 +13,17 @@ function UpcomingEvents() {
       />
 
       <div className="events-container">
-        <EventCard
-          image={music}
-          category="Music"
-          title="Summer Beats Festival"
-          date="June 15, 2024 • 6:00 PM"
-          location="Lagos, Nigeria"
-        />
-
-        <EventCard
-          image={tech}
-          category="Tech"
-          title="Tech Innovators Summit"
-          date="June 22, 2024 • 9:00 AM"
-          location="Abuja, Nigeria"
-        />
-
-        <EventCard
-          image={sports}
-          category="Sports"
-          title="Champions Basketball Cup"
-          date="July 5, 2024 • 4:00 PM"
-          location="Port Harcourt, Nigeria"
-        />
+        {events.slice(0, 3).map((event) => (
+          <EventCard
+            key={event.id}
+            id={event.id}
+            image={event.image}
+            category={event.category}
+            title={event.title}
+            date={event.date}
+            location={event.location}
+          />
+        ))}
       </div>
     </section>
   );

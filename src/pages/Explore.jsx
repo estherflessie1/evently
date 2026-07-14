@@ -21,11 +21,15 @@ function Explore() {
     searchParams.get("search") || "",
   );
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.get("category") || "All",
+  );
+
   const [selectedCity, setSelectedCity] = useState("Any City");
 
   useEffect(() => {
     setSearchTerm(searchParams.get("search") || "");
+    setSelectedCategory(searchParams.get("category") || "All");
   }, [searchParams]);
 
   const filteredEvents = events.filter((event) => {
