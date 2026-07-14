@@ -27,11 +27,17 @@ function Explore() {
 
   const [selectedCity, setSelectedCity] = useState("Any City");
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const eventsPerPage = 6;
+
+  // Read search and category from URL
   useEffect(() => {
     setSearchTerm(searchParams.get("search") || "");
     setSelectedCategory(searchParams.get("category") || "All");
   }, [searchParams]);
 
+  // Filter events
   const filteredEvents = events.filter((event) => {
     const matchesSearch =
       event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -48,10 +54,26 @@ function Explore() {
     return matchesSearch && matchesCategory && matchesCity;
   });
 
+  // Pagination calculation
+  const indexOfLastEvent = currentPage * eventsPerPage;
+
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+
+  const currentEvents = filteredEvents.slice(
+    indexOfFirstEvent,
+    indexOfLastEvent,
+  );
+
+  // Reset pagination when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory, selectedCity]);
+
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedCategory("All");
     setSelectedCity("Any City");
+    setCurrentPage(1);
   };
 
   return (
@@ -77,7 +99,13 @@ function Explore() {
 
         <section className="events-section">
           {filteredEvents.length > 0 ? (
-            <EventGrid events={filteredEvents} />
+            <EventGrid
+              events={currentEvents}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              totalEvents={filteredEvents.length}
+              eventsPerPage={eventsPerPage}
+            />
           ) : (
             <EmptyState onClearFilters={clearFilters} />
           )}

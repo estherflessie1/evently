@@ -2,12 +2,17 @@ import "./EventGrid.css";
 import EventCard from "../EventCard/EventCard";
 import Pagination from "../Pagination/Pagination";
 
-function EventGrid({ events }) {
-  console.log("First event in EventGrid:", events[0]);
+function EventGrid({
+  events,
+  currentPage,
+  setCurrentPage,
+  totalEvents,
+  eventsPerPage,
+}) {
   return (
     <section className="event-grid-section">
       <div className="grid-header">
-        <h2>{events.length} Events Found</h2>
+        <h2>{totalEvents} Events Found</h2>
 
         <select>
           <option>Sort by: Relevance</option>
@@ -31,7 +36,12 @@ function EventGrid({ events }) {
         ))}
       </div>
 
-      <Pagination />
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalEvents={totalEvents}
+        eventsPerPage={eventsPerPage}
+      />
     </section>
   );
 }
