@@ -1,0 +1,132 @@
+.signin-page {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-container {
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.signin-container h1 {
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* Description text */
+.signin-container > p {
+  text-align: center;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.signin-form input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.signin-form input:focus {
+  border-color: #2563eb;
+}
+
+.signin-form button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signin-form button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer section */
+.signin-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signin-footer p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.signin-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-footer a:hover {
+  color: #1d4ed8;
+}
+
+/* =====================
+      TABLET
+===================== */
+
+@media (max-width: 768px) {
+  .signin-container {
+    padding: 35px 25px;
+  }
+
+  .signin-container h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* =====================
+       MOBILE
+===================== */
+
+@media (max-width: 480px) {
+  .signin-page {
+    padding: 50px 20px;
+  }
+
+  .signin-container {
+    padding: 30px 20px;
+  }
+
+  .signin-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .signin-form input,
+  .signin-form button {
+    padding: 14px;
+  }
+
+  .signin-footer {
+    margin-top: 30px;
+  }
+}
