@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -21,17 +20,5 @@ createRoot(document.getElementById("root")).render(
         </EventProvider>
       </AuthProvider>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
-=======
-import React from "react";
-import ReactDom from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-
-ReactDom.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-);
->>>>>>> d99048eba6f6d7bdfce5bcf271b77f41a8e5f5a5

@@ -10,12 +10,14 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* Logo */}
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="Evently logo" />
         </Link>
       </div>
 
+      {/* Navigation Links */}
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
         <li>
           <Link to="/" onClick={() => setMenuOpen(false)}>
@@ -35,18 +37,24 @@ function Navbar() {
           </Link>
         </li>
 
+        {/* Mobile Sign In Button */}
         <li>
-          <button
+          <Link
+            to="/signin"
             className="sign-in-btn mobile-btn"
             onClick={() => setMenuOpen(false)}
           >
             Sign In
-          </button>
+          </Link>
         </li>
       </ul>
 
-      <button className="sign-in-btn desktop-btn">Sign In</button>
+      {/* Desktop Sign In Button */}
+      <Link to="/signin" className="sign-in-btn desktop-btn">
+        Sign In
+      </Link>
 
+      {/* Mobile Menu Toggle */}
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FiX /> : <FiMenu />}
       </button>
